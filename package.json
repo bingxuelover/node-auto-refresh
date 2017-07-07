@@ -1,0 +1,36 @@
+{
+  "name": "node-auto-refresh",
+  "version": "1.0.0",
+  "description": "前端同学使用的自动刷新页面的本地服务器",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "lessc": "lessc public/css/*.less dist/css/*.min.css --clean-css",
+    "uglify": "mkdir -p dist/js && uglifyjs public/js/*.js -m -o dist/js/app.js && uglifyjs public/js/*.js -m -c -o dist/js/app.min.js",
+    "watch:css": "onchange 'public/css/*.less' -- npm run lessc",
+    "watch:js": "onchange 'public/js/*.js' -- npm run uglify",
+    "watch": "npm run watch:css & npm run watch:js",
+    "server": "browser-sync start --server 'dist' --files 'dist/css/*.css, dist/*.html, dist/js/*.js, dist/images'",
+    "build": "npm run server & npm run watch"
+  },
+  "keywords": [
+    "node",
+    "refresh",
+    "express",
+    "browser-sync",
+    "less",
+    "onchange",
+    "uglify-js"
+  ],
+  "author": "sophie",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "express": "^4.15.3",
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1",
+    "onchange": "^3.2.1",
+    "uglify-js": "^3.0.23"
+  }
+}

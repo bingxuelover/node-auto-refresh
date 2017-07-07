@@ -1,0 +1,1 @@
+function test(){document.write("js测试文本123")}function addDiv(){document.body.innerHTML="test"}
