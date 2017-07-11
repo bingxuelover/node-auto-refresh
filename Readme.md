@@ -5,6 +5,8 @@
 
 #使用方法
 
+##安装 npm install
+
 ##运行 npm start
 启动 http://localhost:3000/ 端口的服务器，运行的是public文件集里的静态页面
 
